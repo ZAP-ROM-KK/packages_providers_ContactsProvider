@@ -4356,7 +4356,7 @@ public class ContactsDatabaseHelper extends SQLiteOpenHelper {
      * @param cache In-memory cache of previous answers.
      * @return An unique integer mapping for the given value.
      */
-    private long lookupAndCacheId(SQLiteStatement query, SQLiteStatement insert,
+    private synchronized long lookupAndCacheId(SQLiteStatement query, SQLiteStatement insert,
             String value, HashMap<String, Long> cache) {
         long id = -1;
         try {
